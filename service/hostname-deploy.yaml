@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hn-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hn-pod-label
+  template:
+    metadata:
+      name: hn-pod
+      labels:
+        app: hn-pod-label
+    spec:
+      containers:
+        - name: hn-container
+          image: hostname:0
+          ports:
+            - containerPort: 80
+              protocol: TCP

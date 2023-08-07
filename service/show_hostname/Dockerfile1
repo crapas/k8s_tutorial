@@ -1,0 +1,9 @@
+FROM python:3.9-alpine
+
+RUN pip install flask
+WORKDIR /app
+COPY hostname.py .
+EXPOSE 80
+
+# Start the web server
+CMD ["python", "hostname.py"]

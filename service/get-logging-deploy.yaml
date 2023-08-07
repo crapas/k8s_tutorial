@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gl-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gl-pod-label
+  template:
+    metadata:
+      name: gl-pod
+      labels:
+        app: gl-pod-label
+    spec:
+      containers:
+        - name: gl-container
+          image: get_logging:0

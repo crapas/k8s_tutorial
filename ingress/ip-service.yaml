@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ip-service
+spec:
+  selector:
+    app: ip-pod-label
+  ports:
+    - port: 5998
+      protocol: TCP
+      targetPort: 80

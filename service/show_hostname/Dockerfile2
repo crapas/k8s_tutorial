@@ -1,0 +1,8 @@
+FROM python:3.9-alpine
+
+RUN pip install requests
+WORKDIR /app
+COPY get_and_logging.py .
+
+# Start the web server
+CMD ["python", "get_and_logging.py"]

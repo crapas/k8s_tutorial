@@ -1,0 +1,4 @@
+FROM nginx:latest
+LABEL maintainer "edberg1974 <edberg.s@gmail.com>"
+
+COPY index_v2.html /usr/share/nginx/html/index.html
