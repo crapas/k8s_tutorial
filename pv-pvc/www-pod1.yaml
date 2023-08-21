@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: www-pod
+  labels:
+    app: www-pod-label
+spec:
+  volumes:
+    - name: www-storage
+      persistentVolumeClaim:
+        claimName: pvc-1-5g
+  containers:
+    - name: www-container
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: www-storage
